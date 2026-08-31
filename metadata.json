@@ -1,0 +1,6 @@
+{
+  "name": "RailSync Enterprise",
+  "description": "AI-driven block planning and corridor optimization prototype for Indian Railways.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

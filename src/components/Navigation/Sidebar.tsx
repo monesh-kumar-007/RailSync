@@ -1,23 +1,11 @@
 import React from 'react';
-import {
-  LayoutDashboard,
-  CalendarRange,
-  Wrench,
-  BrainCircuit,
-  GitBranch,
-  Cpu,
-  Activity,
-  BarChart3,
-  Settings,
-  Bell,
-  TrainTrack
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync, ActiveTab } from '../../context/RailSyncContext';
 
 interface NavItem {
   id: ActiveTab;
   label: string;
-  icon: React.ComponentType<{ className?: string; size?: number }>;
+  iconName: string;
   badge?: number;
 }
 
@@ -34,25 +22,25 @@ export const Sidebar: React.FC = () => {
   const unreadAlertsCount = liveAlerts.filter((a) => !a.resolved).length;
 
   const navItems: NavItem[] = [
-    { id: 'overview', label: 'Overview', icon: LayoutDashboard },
-    { id: 'block_planner', label: 'Block Planner', icon: CalendarRange },
+    { id: 'overview', label: 'Overview', iconName: 'dashboard' },
+    { id: 'block_planner', label: 'Block Planner', iconName: 'calendar_month' },
     {
       id: 'maintenance_requests',
       label: 'Maintenance Requests',
-      icon: Wrench,
+      iconName: 'build',
       badge: pendingCount > 0 ? pendingCount : undefined
     },
-    { id: 'ai_prioritization', label: 'AI Prioritization', icon: BrainCircuit },
-    { id: 'corridor_schedule', label: 'Corridor Schedule', icon: GitBranch },
-    { id: 'what_if_simulator', label: 'What-If Simulator', icon: Cpu },
+    { id: 'ai_prioritization', label: 'AI Prioritization', iconName: 'psychology' },
+    { id: 'corridor_schedule', label: 'Corridor Schedule', iconName: 'alt_route' },
+    { id: 'what_if_simulator', label: 'What-If Simulator', iconName: 'memory' },
     {
       id: 'live_operations',
       label: 'Live Operations',
-      icon: Activity,
+      iconName: 'monitoring',
       badge: unreadAlertsCount > 0 ? unreadAlertsCount : undefined
     },
-    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
-    { id: 'settings', label: 'Settings', icon: Settings }
+    { id: 'analytics', label: 'Analytics', iconName: 'bar_chart' },
+    { id: 'settings', label: 'Settings', iconName: 'settings' }
   ];
 
   return (
@@ -63,7 +51,7 @@ export const Sidebar: React.FC = () => {
       {/* Brand Header */}
       <div className="flex items-center px-5 h-16 border-b border-slate-800/80 gap-3">
         <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-          <TrainTrack size={20} className="stroke-[2.2]" />
+          <Icon name="train" size={20} />
         </div>
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5">
@@ -86,7 +74,6 @@ export const Sidebar: React.FC = () => {
 
         {navItems.map((item) => {
           const isActive = activeTab === item.id;
-          const Icon = item.icon;
 
           return (
             <button
@@ -101,7 +88,8 @@ export const Sidebar: React.FC = () => {
             >
               <div className="flex items-center gap-3">
                 <Icon
-                  size={17}
+                  name={item.iconName}
+                  size={18}
                   className={`transition-colors ${
                     isActive ? 'text-emerald-400' : 'text-slate-400'
                   }`}
@@ -133,7 +121,7 @@ export const Sidebar: React.FC = () => {
           className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-slate-400 hover:text-slate-200 hover:bg-slate-900 transition-colors cursor-pointer"
         >
           <div className="flex items-center gap-2.5">
-            <Bell size={16} />
+            <Icon name="notifications" size={16} />
             <span>Alerts &amp; SCADA</span>
           </div>
           {unreadAlertsCount > 0 ? (

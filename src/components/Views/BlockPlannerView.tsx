@@ -1,21 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Sparkles,
-  Sliders,
-  Calendar,
-  Clock,
-  ShieldCheck,
-  CheckCircle2,
-  Layers,
-  TableProperties,
-  FileCode2,
-  Gauge,
-  Zap,
-  Check,
-  RefreshCw,
-  GitBranch,
-  ArrowRight
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const BlockPlannerView: React.FC = () => {
@@ -58,7 +42,7 @@ export const BlockPlannerView: React.FC = () => {
             disabled={isOptimizing}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold flex items-center gap-2 transition-all shadow-xs cursor-pointer disabled:opacity-50"
           >
-            <Sparkles size={14} className={isOptimizing ? 'animate-spin' : ''} />
+            <Icon name="auto_awesome" size={15} className={isOptimizing ? 'animate-spin' : ''} />
             {isOptimizing ? 'Running CP-SAT Solver...' : 'Generate Optimal Block'}
           </button>
 
@@ -67,7 +51,7 @@ export const BlockPlannerView: React.FC = () => {
             onClick={() => setIsManualOverrideOpen(true)}
             className="px-3.5 py-2 bg-white border border-slate-200 hover:border-slate-300 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-2 shadow-2xs hover:bg-slate-50 transition-colors cursor-pointer"
           >
-            <Sliders size={14} className="text-slate-500" />
+            <Icon name="tune" size={15} className="text-slate-500" />
             Manual Override
           </button>
         </div>
@@ -358,7 +342,7 @@ export const BlockPlannerView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
               <span className="text-xs font-bold text-slate-900 flex items-center gap-2">
-                <ShieldCheck size={16} className="text-emerald-600" />
+                <Icon name="security" size={16} className="text-emerald-600" />
                 Hard Constraint 1: Zero Spatial Overlap Conflict
               </span>
               <p className="text-xs text-slate-600 mt-2 font-mono bg-white p-2.5 rounded border border-slate-200">
@@ -368,7 +352,7 @@ export const BlockPlannerView: React.FC = () => {
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
               <span className="text-xs font-bold text-slate-900 flex items-center gap-2">
-                <Gauge size={16} className="text-indigo-600" />
+                <Icon name="speed" size={16} className="text-indigo-600" />
                 Hard Constraint 2: Premium Train Headway Protection
               </span>
               <p className="text-xs text-slate-600 mt-2 font-mono bg-white p-2.5 rounded border border-slate-200">
@@ -378,7 +362,7 @@ export const BlockPlannerView: React.FC = () => {
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
               <span className="text-xs font-bold text-slate-900 flex items-center gap-2">
-                <Zap size={16} className="text-amber-600" />
+                <Icon name="bolt" size={16} className="text-amber-600" />
                 Hard Constraint 3: Traction Power Isolation Window
               </span>
               <p className="text-xs text-slate-600 mt-2 font-mono bg-white p-2.5 rounded border border-slate-200">
@@ -388,7 +372,7 @@ export const BlockPlannerView: React.FC = () => {
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
               <span className="text-xs font-bold text-slate-900 flex items-center gap-2">
-                <Sliders size={16} className="text-purple-600" />
+                <Icon name="tune" size={16} className="text-purple-600" />
                 Objective Function: Multi-Criteria Minimization
               </span>
               <p className="text-xs text-slate-600 mt-2 font-mono bg-white p-2.5 rounded border border-slate-200">

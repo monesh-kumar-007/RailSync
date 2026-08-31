@@ -1,18 +1,5 @@
 import React from 'react';
-import {
-  Sparkles,
-  RotateCcw,
-  ShieldAlert,
-  ZapOff,
-  TrendingUp,
-  CloudFog,
-  BrainCircuit,
-  CheckCircle2,
-  AlertTriangle,
-  Gauge,
-  ArrowRight,
-  Layers
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 import { SimulationScenario } from '../../types';
 
@@ -108,7 +95,7 @@ export const WhatIfSimulatorView: React.FC = () => {
                 onClick={() => resolveActiveScenario()}
                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
               >
-                <Sparkles size={14} />
+                <Icon name="auto_awesome" size={15} />
                 Generate AI Mitigation Plan
               </button>
             )}
@@ -119,7 +106,7 @@ export const WhatIfSimulatorView: React.FC = () => {
               }}
               className="px-3.5 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-colors cursor-pointer"
             >
-              <RotateCcw size={14} className="text-slate-500" />
+              <Icon name="restart_alt" size={15} className="text-slate-500" />
               Reset Simulation
             </button>
           </div>
@@ -134,7 +121,7 @@ export const WhatIfSimulatorView: React.FC = () => {
         >
           <div className="flex justify-between items-center mb-3">
             <div className="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
-              <ShieldAlert size={16} />
+              <Icon name="gpp_bad" size={18} />
             </div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-rose-600">Track Failure</span>
           </div>
@@ -145,7 +132,7 @@ export const WhatIfSimulatorView: React.FC = () => {
             Inject an ultrasonic rail fracture at MP 13.5 requiring an immediate 2.5h block.
           </p>
           <span className="text-xs font-semibold text-indigo-600 mt-3 inline-flex items-center gap-1">
-            Inject Failure <ArrowRight size={12} />
+            Inject Failure <Icon name="arrow_forward" size={13} />
           </span>
         </div>
 
@@ -155,7 +142,7 @@ export const WhatIfSimulatorView: React.FC = () => {
         >
           <div className="flex justify-between items-center mb-3">
             <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
-              <ZapOff size={16} />
+              <Icon name="flash_off" size={18} />
             </div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600">Traction Tripping</span>
           </div>
@@ -166,7 +153,7 @@ export const WhatIfSimulatorView: React.FC = () => {
             Simulate 0 kV catenary trip on DN Line (Sec 2 GZB-ALJN) with stranded electric locos.
           </p>
           <span className="text-xs font-semibold text-indigo-600 mt-3 inline-flex items-center gap-1">
-            Inject Failure <ArrowRight size={12} />
+            Inject Failure <Icon name="arrow_forward" size={13} />
           </span>
         </div>
 
@@ -176,7 +163,7 @@ export const WhatIfSimulatorView: React.FC = () => {
         >
           <div className="flex justify-between items-center mb-3">
             <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-              <TrendingUp size={16} />
+              <Icon name="trending_up" size={18} />
             </div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">+35% Surge</span>
           </div>
@@ -187,7 +174,7 @@ export const WhatIfSimulatorView: React.FC = () => {
             Inject 6 Festival Holiday Special Superfast rakes into midnight headway slots.
           </p>
           <span className="text-xs font-semibold text-indigo-600 mt-3 inline-flex items-center gap-1">
-            Inject Surge <ArrowRight size={12} />
+            Inject Surge <Icon name="arrow_forward" size={13} />
           </span>
         </div>
 
@@ -197,7 +184,7 @@ export const WhatIfSimulatorView: React.FC = () => {
         >
           <div className="flex justify-between items-center mb-3">
             <div className="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-              <CloudFog size={16} />
+              <Icon name="foggy" size={18} />
             </div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-sky-600">Weather</span>
           </div>
@@ -208,7 +195,7 @@ export const WhatIfSimulatorView: React.FC = () => {
             Reduce corridor speed ceiling from 130 km/h to 60 km/h for visibility protection.
           </p>
           <span className="text-xs font-semibold text-indigo-600 mt-3 inline-flex items-center gap-1">
-            Inject Weather <ArrowRight size={12} />
+            Inject Weather <Icon name="arrow_forward" size={13} />
           </span>
         </div>
       </div>
@@ -294,7 +281,7 @@ export const WhatIfSimulatorView: React.FC = () => {
           {/* Recovery Strategy Output */}
           <div className="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 space-y-2">
             <span className="text-xs font-bold text-indigo-700 flex items-center gap-1.5 uppercase tracking-wider">
-              <BrainCircuit size={16} />
+              <Icon name="psychology" size={16} />
               AI Recovery Plan Summary
             </span>
             <ul className="text-xs text-slate-700 space-y-1 list-disc list-inside">
@@ -307,7 +294,7 @@ export const WhatIfSimulatorView: React.FC = () => {
       ) : (
         <div className="bg-white border border-slate-200/90 rounded-xl p-12 text-center shadow-xs space-y-2">
           <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
-            <BrainCircuit size={24} />
+            <Icon name="psychology" size={26} />
           </div>
           <h2 className="text-base font-bold text-slate-900">No Simulation Scenario Currently Active</h2>
           <p className="text-xs text-slate-500 max-w-md mx-auto">

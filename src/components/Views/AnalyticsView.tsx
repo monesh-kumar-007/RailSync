@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import {
-  TrendingUp,
-  TrainTrack,
-  Layers,
-  Timer,
-  AlertTriangle,
-  ShieldCheck,
-  BrainCircuit,
-  CheckCircle2,
-  BarChart3,
-  Calendar,
-  Zap,
-  Gauge
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const AnalyticsView: React.FC = () => {
@@ -70,7 +57,7 @@ export const AnalyticsView: React.FC = () => {
               Block Hours Saved
             </span>
             <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-              <Timer size={16} />
+              <Icon name="timer" size={18} />
             </div>
           </div>
 
@@ -79,7 +66,7 @@ export const AnalyticsView: React.FC = () => {
               {metrics.blockHoursSaved.toLocaleString()}
             </span>
             <span className="text-xs text-emerald-600 mb-1 flex items-center font-bold">
-              <TrendingUp size={14} className="mr-0.5" />
+              <Icon name="trending_up" size={14} className="mr-0.5" />
               {metrics.blockHoursSavedTrendPct}%
             </span>
           </div>
@@ -103,7 +90,7 @@ export const AnalyticsView: React.FC = () => {
               Asset Availability
             </span>
             <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-              <TrainTrack size={16} />
+              <Icon name="train" size={18} />
             </div>
           </div>
 
@@ -112,7 +99,7 @@ export const AnalyticsView: React.FC = () => {
               {metrics.assetAvailability}%
             </span>
             <span className="text-xs text-emerald-600 mb-1 flex items-center font-bold">
-              <TrendingUp size={14} className="mr-0.5" />
+              <Icon name="trending_up" size={14} className="mr-0.5" />
               {metrics.assetAvailabilityTrendPct}%
             </span>
           </div>
@@ -150,7 +137,7 @@ export const AnalyticsView: React.FC = () => {
               Bundled Tasks
             </span>
             <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-              <Layers size={16} />
+              <Icon name="layers" size={18} />
             </div>
           </div>
 
@@ -222,7 +209,7 @@ export const AnalyticsView: React.FC = () => {
               Conventional Method
             </div>
             <div className="text-xs font-bold uppercase tracking-wider text-indigo-700 text-center flex justify-center items-center gap-1.5">
-              <BrainCircuit size={15} /> RailSync AI
+              <Icon name="psychology" size={16} /> RailSync AI
             </div>
           </div>
 
@@ -230,7 +217,7 @@ export const AnalyticsView: React.FC = () => {
           <div className="grid grid-cols-3 p-4 border-b border-slate-100 hover:bg-slate-50/80 transition-colors items-center text-xs">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-slate-100 text-slate-600 rounded-lg">
-                <Timer size={16} />
+                <Icon name="timer" size={16} />
               </div>
               <span className="font-semibold text-slate-900">
                 Average Block Duration
@@ -248,7 +235,7 @@ export const AnalyticsView: React.FC = () => {
           <div className="grid grid-cols-3 p-4 border-b border-slate-100 hover:bg-slate-50/80 transition-colors items-center text-xs">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-slate-100 text-slate-600 rounded-lg">
-                <AlertTriangle size={16} />
+                <Icon name="warning" size={16} />
               </div>
               <span className="font-semibold text-slate-900">
                 Weekly Conflicts
@@ -266,7 +253,7 @@ export const AnalyticsView: React.FC = () => {
           <div className="grid grid-cols-3 p-4 hover:bg-slate-50/80 transition-colors items-center text-xs">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-slate-100 text-slate-600 rounded-lg">
-                <ShieldCheck size={16} />
+                <Icon name="security" size={16} />
               </div>
               <span className="font-semibold text-slate-900">
                 Network Availability

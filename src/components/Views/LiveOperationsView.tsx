@@ -1,18 +1,5 @@
 import React from 'react';
-import {
-  Activity,
-  ShieldAlert,
-  AlertTriangle,
-  Radio,
-  Sparkles,
-  CheckCircle2,
-  Clock,
-  ArrowRight,
-  Zap,
-  Check,
-  History,
-  TrainTrack
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const LiveOperationsView: React.FC = () => {
@@ -52,7 +39,7 @@ export const LiveOperationsView: React.FC = () => {
             disabled={isOptimizing}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold flex items-center gap-2 shadow-xs transition-colors cursor-pointer disabled:opacity-50"
           >
-            <Sparkles size={14} className={isOptimizing ? 'animate-spin' : ''} />
+            <Icon name="auto_awesome" size={15} className={isOptimizing ? 'animate-spin' : ''} />
             {isOptimizing ? 'Re-optimizing...' : 'Trigger Global AI Re-Optimization'}
           </button>
         </div>
@@ -65,7 +52,7 @@ export const LiveOperationsView: React.FC = () => {
           <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <AlertTriangle size={16} className="text-amber-500" />
+                <Icon name="warning" size={16} className="text-amber-500" />
                 <h2 className="text-sm font-bold text-slate-900">
                   Active Alarms &amp; Incidents
                 </h2>
@@ -219,7 +206,7 @@ export const LiveOperationsView: React.FC = () => {
           {/* Audit Logs */}
           <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2">
-              <History size={16} className="text-slate-400" />
+              <Icon name="history" size={16} className="text-slate-400" />
               <h2 className="text-sm font-bold text-slate-900">
                 Operations Audit Trail &amp; AI Re-Optimization Log
               </h2>

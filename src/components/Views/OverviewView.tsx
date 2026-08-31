@@ -1,17 +1,5 @@
 import React from 'react';
-import {
-  CheckCircle2,
-  ShieldCheck,
-  Edit3,
-  Sparkles,
-  Clock,
-  ArrowUpRight,
-  Zap,
-  Calendar,
-  Layers,
-  ArrowRight,
-  TrendingUp
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const OverviewView: React.FC = () => {
@@ -39,7 +27,7 @@ export const OverviewView: React.FC = () => {
             </h1>
             {isApproved && (
               <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
-                <CheckCircle2 size={13} className="text-emerald-600" />
+                <Icon name="check_circle" size={14} className="text-emerald-600" />
                 APPROVED IN TIMETABLE
               </span>
             )}
@@ -55,7 +43,7 @@ export const OverviewView: React.FC = () => {
             onClick={() => setIsManualOverrideOpen(true)}
             className="px-3.5 py-2 bg-white border border-slate-200 hover:border-slate-300 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-2 shadow-2xs hover:bg-slate-50 transition-all cursor-pointer"
           >
-            <Edit3 size={14} className="text-slate-500" />
+            <Icon name="edit" size={15} className="text-slate-500" />
             Manual Override
           </button>
 
@@ -69,7 +57,7 @@ export const OverviewView: React.FC = () => {
                 : 'bg-indigo-600 hover:bg-indigo-700 text-white'
             }`}
           >
-            <CheckCircle2 size={15} />
+            <Icon name="check_circle" size={16} />
             {isApproved ? 'Plan Approved' : 'Approve Plan'}
           </button>
         </div>
@@ -83,7 +71,7 @@ export const OverviewView: React.FC = () => {
           <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs">
             <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-slate-100">
               <div className="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
-                <ShieldCheck size={18} />
+                <Icon name="security" size={18} />
               </div>
               <div>
                 <h2 className="text-sm font-bold text-slate-900">
@@ -98,7 +86,7 @@ export const OverviewView: React.FC = () => {
             <ul className="flex flex-col gap-3.5">
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 size={13} />
+                  <Icon name="check_circle" size={14} />
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-800">
@@ -112,7 +100,7 @@ export const OverviewView: React.FC = () => {
 
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 size={13} />
+                  <Icon name="check_circle" size={14} />
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-800">
@@ -126,7 +114,7 @@ export const OverviewView: React.FC = () => {
 
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 size={13} />
+                  <Icon name="check_circle" size={14} />
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-800">
@@ -140,7 +128,7 @@ export const OverviewView: React.FC = () => {
 
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 size={13} />
+                  <Icon name="check_circle" size={14} />
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-800">
@@ -212,7 +200,7 @@ export const OverviewView: React.FC = () => {
                   disabled={isOptimizing}
                   className="px-3 py-1.5 text-xs bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 rounded-lg font-semibold transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
                 >
-                  <Sparkles size={13} className="text-indigo-600" />
+                  <Icon name="auto_awesome" size={15} className="text-indigo-600" />
                   {isOptimizing ? 'Solving...' : 'Re-Run CP-SAT Solver'}
                 </button>
               </div>
@@ -302,7 +290,7 @@ export const OverviewView: React.FC = () => {
                 className="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center gap-1 cursor-pointer text-xs"
               >
                 <span>View Corridor Timetable Gantt</span>
-                <ArrowRight size={13} />
+                <Icon name="arrow_forward" size={14} />
               </button>
             </div>
           </div>
@@ -318,7 +306,7 @@ export const OverviewView: React.FC = () => {
                   {metrics.blockHoursSaved}
                 </span>
                 <span className="text-xs font-semibold text-emerald-600 flex items-center gap-0.5">
-                  <TrendingUp size={12} />
+                  <Icon name="trending_up" size={14} />
                   +{metrics.blockHoursSavedTrendPct}%
                 </span>
               </div>
@@ -334,7 +322,7 @@ export const OverviewView: React.FC = () => {
                   {metrics.assetAvailability}%
                 </span>
                 <span className="text-xs font-semibold text-emerald-600 flex items-center gap-0.5">
-                  <TrendingUp size={12} />
+                  <Icon name="trending_up" size={14} />
                   +{metrics.assetAvailabilityTrendPct}%
                 </span>
               </div>

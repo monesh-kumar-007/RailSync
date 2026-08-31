@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Edit3, X, AlertTriangle, Check, Clock } from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const ManualOverrideModal: React.FC = () => {
@@ -50,7 +50,7 @@ export const ManualOverrideModal: React.FC = () => {
         {/* Header */}
         <div className="flex justify-between items-center border-b border-slate-100 pb-3">
           <div className="flex items-center gap-2">
-            <Edit3 size={18} className="text-indigo-600" />
+            <Icon name="edit" size={18} className="text-indigo-600" />
             <div>
               <h2 className="text-base font-bold text-slate-900">Manual Override: {activePlan.id}</h2>
               <p className="text-xs text-slate-500">
@@ -62,7 +62,7 @@ export const ManualOverrideModal: React.FC = () => {
             onClick={() => setIsManualOverrideOpen(false)}
             className="text-slate-400 hover:text-slate-600 cursor-pointer p-1"
           >
-            <X size={18} />
+            <Icon name="close" size={18} />
           </button>
         </div>
 
@@ -144,7 +144,7 @@ export const ManualOverrideModal: React.FC = () => {
 
         {/* Safety Warning Check */}
         <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg text-xs text-amber-900 flex items-center gap-2">
-          <AlertTriangle size={16} className="text-amber-600 shrink-0" />
+          <Icon name="warning" size={16} className="text-amber-600 shrink-0" />
           <span>
             Manual override bypasses default CP-SAT timetable optimization. Ensure COA Section Controller confirms headway clearance.
           </span>

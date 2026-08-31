@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import {
-  TrainTrack,
-  Hourglass,
-  Clock,
-  ArrowRight,
-  ShieldAlert,
-  Gauge,
-  Filter,
-  CheckCircle2,
-  TrendingUp,
-  Radio
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 import { TrainSchedule } from '../../types';
 
@@ -78,7 +67,7 @@ export const CorridorScheduleView: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="space-y-1">
             <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider flex items-center gap-1.5">
-              <Hourglass size={14} />
+              <Icon name="hourglass_top" size={14} />
               Optimal Maintenance Headway Window Detected
             </span>
             <h2 className="text-base font-bold text-slate-900">
@@ -208,7 +197,7 @@ export const CorridorScheduleView: React.FC = () => {
                           ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
                           : train.status === 'Regulated'
                           ? 'bg-amber-50 text-amber-800 border border-amber-200'
-                          : 'bg-rose-50 text-rose-700 border border-rose-200'
+                          : 'bg-rose-50 text-rose-700 border-rose-200'
                       }`}
                     >
                       {train.status} {train.delayMinutes > 0 && `(+${train.delayMinutes}m)`}

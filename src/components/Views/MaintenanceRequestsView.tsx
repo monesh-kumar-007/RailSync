@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Plus,
-  Sparkles,
-  Eye,
-  Trash2,
-  Wrench,
-  Zap,
-  Radio,
-  Filter,
-  X,
-  Layers,
-  Clock,
-  UserCheck
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 import { Department, PriorityLevel, MaintenanceRequest } from '../../types';
 
@@ -52,7 +39,7 @@ export const MaintenanceRequestsView: React.FC = () => {
             onClick={() => setIsNewRequestModalOpen(true)}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
           >
-            <Plus size={15} />
+            <Icon name="add" size={16} />
             Add Maintenance Request
           </button>
         </div>
@@ -69,7 +56,7 @@ export const MaintenanceRequestsView: React.FC = () => {
           <div className="flex justify-between items-center">
             <span className="text-xs font-bold text-amber-800 uppercase tracking-wider">TMS (Track Subsystem)</span>
             <div className="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
-              <Wrench size={15} />
+              <Icon name="build" size={15} />
             </div>
           </div>
           <div className="flex items-baseline gap-2 mt-2">
@@ -88,7 +75,7 @@ export const MaintenanceRequestsView: React.FC = () => {
           <div className="flex justify-between items-center">
             <span className="text-xs font-bold text-blue-800 uppercase tracking-wider">SMMS (Signal &amp; Telecom)</span>
             <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-              <Radio size={15} />
+              <Icon name="sensors" size={15} />
             </div>
           </div>
           <div className="flex items-baseline gap-2 mt-2">
@@ -107,7 +94,7 @@ export const MaintenanceRequestsView: React.FC = () => {
           <div className="flex justify-between items-center">
             <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider">TDMS (Traction / OHE)</span>
             <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-              <Zap size={15} />
+              <Icon name="bolt" size={15} />
             </div>
           </div>
           <div className="flex items-baseline gap-2 mt-2">
@@ -165,7 +152,7 @@ export const MaintenanceRequestsView: React.FC = () => {
             onClick={() => runMockCPSATOptimization()}
             className="px-3 py-1.5 text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg font-semibold transition-colors flex items-center gap-1.5 cursor-pointer shadow-2xs"
           >
-            <Sparkles size={13} className="text-indigo-600" />
+            <Icon name="auto_awesome" size={14} className="text-indigo-600" />
             Bundle Selected with CP-SAT
           </button>
         </div>
@@ -284,7 +271,7 @@ export const MaintenanceRequestsView: React.FC = () => {
                           title="Inspect Defect Details"
                           className="p-1 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded transition-colors cursor-pointer"
                         >
-                          <Eye size={15} />
+                          <Icon name="visibility" size={16} />
                         </button>
 
                         <button
@@ -292,7 +279,7 @@ export const MaintenanceRequestsView: React.FC = () => {
                           title="Delete Request"
                           className="p-1 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors cursor-pointer"
                         >
-                          <Trash2 size={15} />
+                          <Icon name="delete" size={16} />
                         </button>
                       </div>
                     </td>
@@ -317,7 +304,7 @@ export const MaintenanceRequestsView: React.FC = () => {
                 onClick={() => setSelectedReq(null)}
                 className="text-slate-400 hover:text-slate-600 cursor-pointer p-1"
               >
-                <X size={18} />
+                <Icon name="close" size={18} />
               </button>
             </div>
 

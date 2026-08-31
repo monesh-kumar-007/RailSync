@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PlusCircle, X, Wrench, Radio, Zap, Check } from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 import { Department, PriorityLevel } from '../../types';
 
@@ -67,14 +67,14 @@ export const NewRequestModal: React.FC = () => {
       <div className="bg-white border border-slate-200 rounded-xl max-w-xl w-full p-6 shadow-2xl space-y-4 animate-fade-in max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center border-b border-slate-100 pb-3">
           <div className="flex items-center gap-2">
-            <PlusCircle size={20} className="text-indigo-600" />
+            <Icon name="add_circle" size={20} className="text-indigo-600" />
             <h2 className="text-base font-bold text-slate-900">New Maintenance Request</h2>
           </div>
           <button
             onClick={() => setIsNewRequestModalOpen(false)}
             className="text-slate-400 hover:text-slate-600 cursor-pointer p-1"
           >
-            <X size={18} />
+            <Icon name="close" size={18} />
           </button>
         </div>
 

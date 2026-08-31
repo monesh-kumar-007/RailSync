@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  BrainCircuit,
-  Sliders,
-  Sparkles,
-  ShieldAlert,
-  Activity,
-  Flame,
-  CheckSquare,
-  Square,
-  AlertTriangle,
-  Scale
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 import { DEFECT_CATALOG } from '../../data/mockData';
 
@@ -56,7 +45,7 @@ export const AIPrioritizationView: React.FC = () => {
             disabled={isOptimizing}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold flex items-center gap-2 shadow-xs transition-all cursor-pointer disabled:opacity-50"
           >
-            <Sparkles size={14} className={isOptimizing ? 'animate-spin' : ''} />
+            <Icon name="auto_awesome" size={15} className={isOptimizing ? 'animate-spin' : ''} />
             {isOptimizing ? 'Optimizing...' : 'Re-Rank & Bundle Blocks'}
           </button>
         </div>
@@ -109,7 +98,7 @@ export const AIPrioritizationView: React.FC = () => {
           {/* Multi-Criteria Weight Tuner */}
           <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2">
-              <Scale size={16} className="text-indigo-600" />
+              <Icon name="balance" size={16} className="text-indigo-600" />
               <h2 className="text-sm font-bold text-slate-900">
                 Mathematical Objective Weights
               </h2>
@@ -195,9 +184,9 @@ export const AIPrioritizationView: React.FC = () => {
                   >
                     <div className="flex items-center gap-2.5">
                       {isSelected ? (
-                        <CheckSquare size={16} className="text-indigo-600 shrink-0" />
+                        <Icon name="check_box" size={18} className="text-indigo-600 shrink-0" />
                       ) : (
-                        <Square size={16} className="text-slate-400 shrink-0" />
+                        <Icon name="check_box_outline_blank" size={18} className="text-slate-400 shrink-0" />
                       )}
                       <div>
                         <span className="text-xs font-semibold text-slate-900 block">

@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  Search,
-  GitBranch,
-  Bell,
-  Download,
-  Settings,
-  Activity,
-  CheckCircle2,
-  AlertTriangle,
-  RefreshCw,
-  X
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const TopAppBar: React.FC = () => {
@@ -39,7 +28,8 @@ export const TopAppBar: React.FC = () => {
       <div className="flex items-center gap-4 flex-1 max-w-xl">
         {/* Global Search Bar */}
         <div className="relative w-full max-w-sm">
-          <Search
+          <Icon
+            name="search"
             size={16}
             className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
           />
@@ -56,14 +46,14 @@ export const TopAppBar: React.FC = () => {
               onClick={() => setFilters((prev) => ({ ...prev, searchQuery: '' }))}
               className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5 cursor-pointer"
             >
-              <X size={13} />
+              <Icon name="close" size={14} />
             </button>
           )}
         </div>
 
         {/* Corridor Selector dropdown */}
         <div className="hidden md:flex items-center gap-2 bg-slate-100/90 border border-slate-200/90 px-3 py-1.5 rounded-lg shadow-2xs">
-          <GitBranch size={14} className="text-indigo-600" />
+          <Icon name="alt_route" size={16} className="text-indigo-600" />
           <select
             id="corridor-selector"
             value={selectedCorridorId}
@@ -93,7 +83,7 @@ export const TopAppBar: React.FC = () => {
           }`}
         >
           {isOptimizing || isReoptimizing ? (
-            <RefreshCw size={13} className="animate-spin text-indigo-600" />
+            <Icon name="refresh" size={14} className="animate-spin text-indigo-600" />
           ) : unreadAlerts.length > 0 ? (
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
@@ -125,7 +115,7 @@ export const TopAppBar: React.FC = () => {
             title="Telemetry Alarms & Notifications"
             className="relative p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
           >
-            <Bell size={17} />
+            <Icon name="notifications" size={18} />
             {unreadAlerts.length > 0 && (
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-rose-500 rounded-full ring-2 ring-white"></span>
             )}
@@ -137,7 +127,7 @@ export const TopAppBar: React.FC = () => {
             title="Export Operations Report"
             className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
           >
-            <Download size={17} />
+            <Icon name="download" size={18} />
           </button>
 
           <button
@@ -146,7 +136,7 @@ export const TopAppBar: React.FC = () => {
             title="Settings & Optimization Parameters"
             className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
           >
-            <Settings size={17} />
+            <Icon name="settings" size={18} />
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileDown, X, FileText } from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const ExportReportModal: React.FC = () => {
@@ -18,14 +18,14 @@ export const ExportReportModal: React.FC = () => {
       <div className="bg-white border border-slate-200 rounded-xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-fade-in">
         <div className="flex justify-between items-center border-b border-slate-100 pb-3">
           <div className="flex items-center gap-2">
-            <FileDown size={20} className="text-indigo-600" />
+            <Icon name="download" size={20} className="text-indigo-600" />
             <h2 className="text-base font-bold text-slate-900">Export Analytics &amp; Plan Report</h2>
           </div>
           <button
             onClick={() => setIsExportModalOpen(false)}
             className="text-slate-400 hover:text-slate-600 cursor-pointer p-1"
           >
-            <X size={18} />
+            <Icon name="close" size={18} />
           </button>
         </div>
 

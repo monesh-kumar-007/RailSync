@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bell, X, AlertTriangle, Sparkles, Check } from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const NotificationsDrawer: React.FC = () => {
@@ -27,14 +27,14 @@ export const NotificationsDrawer: React.FC = () => {
           <div>
             <div className="flex justify-between items-center border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2">
-                <Bell size={20} className="text-indigo-600" />
+                <Icon name="notifications" size={20} className="text-indigo-600" />
                 <h2 className="text-base font-bold text-slate-900">Divisional Alerts &amp; Telemetry</h2>
               </div>
               <button
                 onClick={() => setIsNotificationDrawerOpen(false)}
                 className="text-slate-400 hover:text-slate-600 cursor-pointer p-1"
               >
-                <X size={18} />
+                <Icon name="close" size={18} />
               </button>
             </div>
 

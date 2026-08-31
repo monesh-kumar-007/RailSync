@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  Sliders,
-  Sparkles,
-  ShieldCheck,
-  Building2,
-  RotateCcw,
-  Save,
-  CheckCircle2,
-  Clock,
-  Zap,
-  Gauge
-} from 'lucide-react';
+import { Icon } from '../Common/Icon';
 import { useRailSync } from '../../context/RailSyncContext';
 
 export const SettingsView: React.FC = () => {
@@ -41,7 +30,7 @@ export const SettingsView: React.FC = () => {
         {/* CP-SAT Solver Tuning */}
         <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
           <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-            <Sliders size={18} className="text-indigo-600" />
+            <Icon name="tune" size={18} className="text-indigo-600" />
             <h2 className="text-sm font-bold text-slate-900">Optimization Engine Parameters (CP-SAT)</h2>
           </div>
 
@@ -93,7 +82,7 @@ export const SettingsView: React.FC = () => {
         {/* Divisional Control Persona */}
         <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
           <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-            <Building2 size={18} className="text-indigo-600" />
+            <Icon name="domain" size={18} className="text-indigo-600" />
             <h2 className="text-sm font-bold text-slate-900">Divisional Control Assignment</h2>
           </div>
 
@@ -138,14 +127,14 @@ export const SettingsView: React.FC = () => {
               onClick={handleReset}
               className="px-4 py-2 border border-rose-200 text-rose-600 hover:bg-rose-50 rounded-lg font-semibold text-xs transition-colors cursor-pointer flex items-center gap-1.5"
             >
-              <RotateCcw size={13} />
+              <Icon name="restart_alt" size={14} />
               Reset to Defaults
             </button>
             <button
               onClick={handleSave}
               className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-xs transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
             >
-              <Save size={13} />
+              <Icon name="save" size={14} />
               Save Configuration
             </button>
           </div>
